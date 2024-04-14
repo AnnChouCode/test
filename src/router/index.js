@@ -140,96 +140,96 @@ const routes = [
       }
     ]
   },
-  {
-    path: '/admin',
-    redirect: '/admin/dashboard',
-    component: () => import('../views/admin/AdminLayout.vue'),
-    meta: { navbarType: 'backend' },
-    children: [
-      // {
-      //   path: 'dashboard',
-      //   name: 'dashboard',
-      //   component: () => import('../views/admin/AdminDashBoard.vue'),
-      //   meta: {
-      //     title: '使用者後台 - Wanderer Land'
-      //   }
-      // },
-      {
-        path: 'products',
-        name: 'products',
-        component: () => import('../views/admin/AdminProductList.vue'),
-        meta: {
-          title: '商品管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'productinfo/new',
-        component: () => import('../views/admin/AdminProductInfo.vue'),
-        meta: {
-          title: '商品管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'productinfo/:id',
-        component: () => import('../views/admin/AdminProductInfo.vue'),
-        props: (route) => {
-          return {
-            id: route.params.id
-          }
-        },
-        meta: {
-          title: '商品管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'artists',
-        name: 'artists',
-        component: () => import('../views/admin/AdminArtistList.vue'),
-        meta: {
-          title: '藝術家管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'artistinfo/new',
-        component: () => import('../views/admin/AdminArtistInfo.vue'),
-        meta: {
-          title: '藝術家管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'artistinfo/:id',
-        component: () => import('../views/admin/AdminArtistInfo.vue'),
-        props: (route) => {
-          return {
-            id: route.params.id
-          }
-        },
-        meta: {
-          title: '藝術家管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'orders',
-        name: 'orders',
-        component: () => import('../views/admin/AdminOrders.vue'),
-        meta: {
-          title: '訂單管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'orderinfo/:id',
-        component: () => import('../views/admin/AdminOrderInfo.vue'),
-        props: (route) => {
-          return {
-            id: route.params.id
-          }
-        },
-        meta: {
-          title: '訂單管理 - Wanderer Land'
-        }
-      }
-    ]
-  },
+  // {
+  //   path: '/admin',
+  //   redirect: '/admin/dashboard',
+  //   component: () => import('../views/admin/AdminLayout.vue'),
+  //   meta: { navbarType: 'backend' },
+  //   children: [
+  //     {
+  //       path: 'dashboard',
+  //       name: 'dashboard',
+  //       component: () => import('../views/admin/AdminDashBoard.vue'),
+  //       meta: {
+  //         title: '使用者後台 - Wanderer Land'
+  //       }
+  //     },
+  //     {
+  //       path: 'products',
+  //       name: 'products',
+  //       component: () => import('../views/admin/AdminProductList.vue'),
+  //       meta: {
+  //         title: '商品管理 - Wanderer Land'
+  //       }
+  //     },
+  //     {
+  //       path: 'productinfo/new',
+  //       component: () => import('../views/admin/AdminProductInfo.vue'),
+  //       meta: {
+  //         title: '商品管理 - Wanderer Land'
+  //       }
+  //     },
+  //     {
+  //       path: 'productinfo/:id',
+  //       component: () => import('../views/admin/AdminProductInfo.vue'),
+  //       props: (route) => {
+  //         return {
+  //           id: route.params.id
+  //         }
+  //       },
+  //       meta: {
+  //         title: '商品管理 - Wanderer Land'
+  //       }
+  //     },
+  //     {
+  //       path: 'artists',
+  //       name: 'artists',
+  //       component: () => import('../views/admin/AdminArtistList.vue'),
+  //       meta: {
+  //         title: '藝術家管理 - Wanderer Land'
+  //       }
+  //     },
+  //     {
+  //       path: 'artistinfo/new',
+  //       component: () => import('../views/admin/AdminArtistInfo.vue'),
+  //       meta: {
+  //         title: '藝術家管理 - Wanderer Land'
+  //       }
+  //     },
+  //     {
+  //       path: 'artistinfo/:id',
+  //       component: () => import('../views/admin/AdminArtistInfo.vue'),
+  //       props: (route) => {
+  //         return {
+  //           id: route.params.id
+  //         }
+  //       },
+  //       meta: {
+  //         title: '藝術家管理 - Wanderer Land'
+  //       }
+  //     },
+  //     {
+  //       path: 'orders',
+  //       name: 'orders',
+  //       component: () => import('../views/admin/AdminOrders.vue'),
+  //       meta: {
+  //         title: '訂單管理 - Wanderer Land'
+  //       }
+  //     },
+  //     {
+  //       path: 'orderinfo/:id',
+  //       component: () => import('../views/admin/AdminOrderInfo.vue'),
+  //       props: (route) => {
+  //         return {
+  //           id: route.params.id
+  //         }
+  //       },
+  //       meta: {
+  //         title: '訂單管理 - Wanderer Land'
+  //       }
+  //     }
+  //   ]
+  // },
   {
     path: '/:pathMatch(.*)*',
     component: () => import('../views/NotFound.vue'),
