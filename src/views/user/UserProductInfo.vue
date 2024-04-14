@@ -25,7 +25,7 @@
         </div>
       </div>
       <!-- 介紹 -->
-      <!-- <div class="col-12 col-md-4">
+      <div class="col-12 col-md-4">
         <div class="p-3 p-lg-7 mb-3 mb-md-6 bg-tertiary">
           <div class="d-flex justify-content-between align-items-start mb-5 mb-md-7">
             <div>
@@ -94,7 +94,7 @@
           <span v-else>已絕版．NT$ {{
             product.productInfo.price.toLocaleString() }}</span>
         </button>
-      </div> -->
+      </div>
       <div>
         <section class="bg-primary text-white py-md-8 py-7">
           <div class="accordion accordion-flush" id="accordionFlushExample">
