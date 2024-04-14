@@ -96,7 +96,6 @@
         </button>
       </div>
       <div>
-        <p>router index.js 僅保留 dashboard</p>
         <section class="bg-primary text-white py-md-8 py-7">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
