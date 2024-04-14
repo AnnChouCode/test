@@ -96,7 +96,7 @@
         </button>
       </div>
       <div>
-        <p>恢復後台檔案，取消 router index.js admin 設定</p>
+        <p>router index.js 僅保留 dashboard</p>
         <section class="bg-primary text-white py-md-8 py-7">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
