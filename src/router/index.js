@@ -180,53 +180,6 @@ const routes = [
         meta: {
           title: '商品管理 - Wanderer Land'
         }
-      },
-      {
-        path: 'artists',
-        name: 'artists',
-        component: () => import('../views/admin/AdminArtistList.vue'),
-        meta: {
-          title: '藝術家管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'artistinfo/new',
-        component: () => import('../views/admin/AdminArtistInfo.vue'),
-        meta: {
-          title: '藝術家管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'artistinfo/:id',
-        component: () => import('../views/admin/AdminArtistInfo.vue'),
-        props: (route) => {
-          return {
-            id: route.params.id
-          }
-        },
-        meta: {
-          title: '藝術家管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'orders',
-        name: 'orders',
-        component: () => import('../views/admin/AdminOrders.vue'),
-        meta: {
-          title: '訂單管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'orderinfo/:id',
-        component: () => import('../views/admin/AdminOrderInfo.vue'),
-        props: (route) => {
-          return {
-            id: route.params.id
-          }
-        },
-        meta: {
-          title: '訂單管理 - Wanderer Land'
-        }
       }
     ]
   },
