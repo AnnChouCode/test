@@ -40,7 +40,9 @@
           <div class="accordion accordion-flush" id="accordion">
             <div class="accordion-item bg-transparent border-info pb-6">
               <h2 class="accordion-header" id="panelsStayOpen-headingSize">
-                <button class="accordion-button text-info fw-bold bg-transparent p-0" type="button" aria-expanded="true"
+                <button class="accordion-button text-info fw-bold bg-transparent p-0"
+                :class="{collapsed:isAccordionSizeShow}"
+                type="button" aria-expanded="true"
                   aria-controls="panelsStayOpen-collapseSize" style="box-shadow: none;" @click="toggleAccordion('Size')">
                   作品規格
                 </button>
@@ -54,7 +56,7 @@
             </div>
             <div class="accordion-item bg-transparent border-info py-6">
               <h2 class="accordion-header" id="panelsStayOpen-headingQty">
-                <button class="accordion-button text-info fw-bold bg-transparent p-0" type="button"
+                <button class="accordion-button text-info fw-bold bg-transparent p-0" :class="{collapsed:isAccordionQtyShow}" type="button"
                   aria-expanded="true"
                   aria-controls="panelsStayOpen-collapseQty" style="box-shadow: none;" @click="toggleAccordion('Qty')">
                   作品版數
@@ -70,7 +72,7 @@
             </div>
             <div class="accordion-item bg-transparent pt-6">
               <h2 class="accordion-header" id="panelsStayOpen-headingAbout">
-                <button class="accordion-button collapsed text-info fw-bold bg-transparent p-0" type="button"
+                <button class="accordion-button text-info fw-bold bg-transparent p-0" :class="{collapsed:isAccordionAboutShow}" type="button"
  aria-expanded="false"
                   aria-controls="panelsStayOpen-collapseAbout" style="box-shadow: none;" @click="toggleAccordion('About')">
                   關於 {{ artistInfo.title }}
@@ -135,7 +137,6 @@ import BtnFavorite from '@/components/button/BtnFavorite.vue'
 import ProductCard from '@/components/ProductCard.vue'
 import BtnSeeMore from '@/components/button/BtnSeeMore.vue'
 
-console.log(Collapse)
 const { VITE_API, VITE_PATH } = import.meta.env
 
 export default {
@@ -156,7 +157,10 @@ export default {
       // 當前產品存在購物車的數量
       quantityInCart: '',
       // 產品風琴
-      accordion: null
+      accordion: null,
+      isAccordionSizeShow: true,
+      isAccordionQtyShow: true,
+      isAccordionAboutShow: false
     }
   },
   watch: {
@@ -180,6 +184,9 @@ export default {
 
     toggleAccordion (type) {
       const refName = `accordion${type}`
+      const buttonTarget = `isAccordion${type}Show`
+      this[buttonTarget] = !this[buttonTarget]
+
       this.accordion = new Collapse(this.$refs[refName], { toggle: true })
       this.accordion.toggle()
     },
