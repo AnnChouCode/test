@@ -37,17 +37,16 @@
           <p class="lh-base lh-md-lg fs-info text-info">{{ product.productInfo.content }}
           </p>
           <hr class="my-6 text-info opacity-100">
-          <div class="accordion accordion-flush" id="accordionFlushProductInfo">
+          <div class="accordion accordion-flush" id="accordion">
             <div class="accordion-item bg-transparent border-info pb-6">
               <h2 class="accordion-header" id="panelsStayOpen-headingSize">
-                <button class="accordion-button text-info fw-bold bg-transparent p-0" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSize" aria-expanded="true"
-                  aria-controls="panelsStayOpen-collapseSize" style="box-shadow: none;" ref="headingSize">
+                <button class="accordion-button text-info fw-bold bg-transparent p-0" type="button" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseSize" style="box-shadow: none;" @click="toggleAccordion('Size')">
                   作品規格
                 </button>
               </h2>
-              <div id="panelsStayOpen-collapseSize" class="accordion-collapse collapse show"
-                aria-labelledby="panelsStayOpen-headingSize" ref="collapseSize">
+              <div class="accordion-collapse collapse show" ref="accordionSize" aria-labelledby="panelsStayOpen-headingSize"
+                data-bs-parent="#accordion">
                 <div class="accordion-body p-0 pt-4 lh-base lh-md-lg h6 text-info">
                   {{ product.productInfo.size }}
                 </div>
@@ -56,12 +55,12 @@
             <div class="accordion-item bg-transparent border-info py-6">
               <h2 class="accordion-header" id="panelsStayOpen-headingQty">
                 <button class="accordion-button text-info fw-bold bg-transparent p-0" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseQty" aria-expanded="true"
-                  aria-controls="panelsStayOpen-collapseQty" style="box-shadow: none;">
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseQty" style="box-shadow: none;" @click="toggleAccordion('Qty')">
                   作品版數
                 </button>
               </h2>
-              <div id="panelsStayOpen-collapseQty" class="accordion-collapse collapse show"
+              <div id="panelsStayOpen-collapseQty" class="accordion-collapse collapse show" ref="accordionQty"
                 aria-labelledby="panelsStayOpen-headingQty">
                 <div class="accordion-body p-0 pt-4 lh-base lh-md-lg h6 text-info">
                   <p>剩餘版數 {{ product.productInfo.quantity ? product.productInfo.quantity - quantityInCart : '無限' }}</p>
@@ -72,12 +71,12 @@
             <div class="accordion-item bg-transparent pt-6">
               <h2 class="accordion-header" id="panelsStayOpen-headingAbout">
                 <button class="accordion-button collapsed text-info fw-bold bg-transparent p-0" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseAbout" aria-expanded="false"
-                  aria-controls="panelsStayOpen-collapseAbout" style="box-shadow: none;">
+ aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseAbout" style="box-shadow: none;" @click="toggleAccordion('About')">
                   關於 {{ artistInfo.title }}
                 </button>
               </h2>
-              <div id="panelsStayOpen-collapseAbout" class="accordion-collapse collapse"
+              <div id="panelsStayOpen-collapseAbout" class="accordion-collapse collapse" ref="accordionAbout"
                 aria-labelledby="panelsStayOpen-headingAbout">
                 <div class="accordion-body p-0 pt-4 lh-base lh-md-lg fs-info text-info">
                   {{ artistInfo.content }}
@@ -95,39 +94,6 @@
             product.productInfo.price.toLocaleString() }}</span>
         </button>
       </div>
-      <!-- bootstrap -->
-      <div class="accordion accordion-flush" id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-    </div>
-  </div>
-</div>
     </div>
   </div>
 
@@ -157,6 +123,8 @@
 </template>
 
 <script>
+import Collapse from 'bootstrap/js/dist/collapse'
+
 import userProductStore from '@/stores/userProductStore.js'
 import favoriteStore from '@/stores/favoriteStore'
 import cartStore from '@/stores/userCartStore.js'
@@ -167,6 +135,7 @@ import BtnFavorite from '@/components/button/BtnFavorite.vue'
 import ProductCard from '@/components/ProductCard.vue'
 import BtnSeeMore from '@/components/button/BtnSeeMore.vue'
 
+console.log(Collapse)
 const { VITE_API, VITE_PATH } = import.meta.env
 
 export default {
@@ -185,7 +154,9 @@ export default {
       // 藝術家資訊
       artistInfo: {},
       // 當前產品存在購物車的數量
-      quantityInCart: ''
+      quantityInCart: '',
+      // 產品風琴
+      accordion: null
     }
   },
   watch: {
@@ -206,6 +177,12 @@ export default {
 
     // 儲存最近瀏覽資料
     ...mapActions(favoriteStore, ['recentlyViewed']),
+
+    toggleAccordion (type) {
+      const refName = `accordion${type}`
+      this.accordion = new Collapse(this.$refs[refName], { toggle: true })
+      this.accordion.toggle()
+    },
 
     // 切換顯示大圖
     changeImage (idx) {
