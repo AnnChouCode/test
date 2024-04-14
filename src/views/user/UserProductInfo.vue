@@ -95,7 +95,7 @@
             product.productInfo.price.toLocaleString() }}</span>
         </button>
       </div>
-      <!-- <div>
+      <div>
         <section class="bg-primary text-white py-md-8 py-7">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
@@ -142,7 +142,7 @@
             </div>
           </div>
         </section>
-      </div> -->
+      </div>
     </div>
   </div>
 
