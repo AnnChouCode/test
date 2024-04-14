@@ -40,7 +40,7 @@
           <div class="accordion accordion-flush" id="accordionFlushProductInfo">
             <div class="accordion-item bg-transparent border-info pb-6">
               <h2 class="accordion-header" id="panelsStayOpen-headingSize">
-                <button class="accordion-button text-info fw-bold bg-transparent p-0" type="button"
+                <button class="accordion-button collapsed text-info fw-bold bg-transparent p-0" type="button"
                   data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSize" aria-expanded="true"
                   aria-controls="panelsStayOpen-collapseSize" style="box-shadow: none;">
                   作品規格
@@ -55,7 +55,7 @@
             </div>
             <div class="accordion-item bg-transparent border-info py-6">
               <h2 class="accordion-header" id="panelsStayOpen-headingQty">
-                <button class="accordion-button text-info fw-bold bg-transparent p-0" type="button"
+                <button class="accordion-button collapsed text-info fw-bold bg-transparent p-0" type="button"
                   data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseQty" aria-expanded="true"
                   aria-controls="panelsStayOpen-collapseQty" style="box-shadow: none;">
                   作品版數
@@ -95,7 +95,7 @@
             product.productInfo.price.toLocaleString() }}</span>
         </button>
       </div>
-      <div>
+      <!-- <div>
         <section class="bg-primary text-white py-md-8 py-7">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
@@ -142,7 +142,7 @@
             </div>
           </div>
         </section>
-      </div>
+      </div> -->
     </div>
   </div>
 
