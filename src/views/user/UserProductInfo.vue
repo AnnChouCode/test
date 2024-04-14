@@ -95,6 +95,59 @@
             product.productInfo.price.toLocaleString() }}</span>
         </button>
       </div>
+      <div>
+        <section class="bg-primary text-white py-md-8 py-7">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="col-md-4">
+                <div class="h-100 d-flex align-items-center">
+                    <h3 class="mb-0"><b>常見問答</b></h3>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="accordion mb-5" id="faq">
+                  <div class="accordion-item">
+                        <div class="accordion-header">
+                            <button
+                                type="button" class="bg-light accordion-button collapsed"
+                                data-bs-toggle="collapse" :data-bs-target="`#faq1`"
+                                aria-expanded="false" :aria-controls="`#faq-1`">
+                                <i class="d-none d-md-block
+                                fs-7 text-highlight bi bi-asterisk me-3"></i>
+                                <b>ques</b>
+                            </button>
+                        </div>
+                        <div
+                            class="accordion-collapse collapse" :id="`faq1`" aria-expanded="false">
+                            <div class="accordion-body">
+                                <p class="mb-0 lh-lg">123123123</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <button
+                                type="button" class="bg-light accordion-button collapsed"
+                                data-bs-toggle="collapse" :data-bs-target="`#faq2`"
+                                aria-expanded="false" :aria-controls="`#faq-2`">
+                                <i class="d-none d-md-block
+                                fs-7 text-highlight bi bi-asterisk me-3"></i>
+                                <b>ques</b>
+                            </button>
+                        </div>
+                        <div
+                            class="accordion-collapse collapse" :id="`faq2`" aria-expanded="false">
+                            <div class="accordion-body">
+                                <p class="mb-0 lh-lg">123123123</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+      </div>
     </div>
   </div>
 
