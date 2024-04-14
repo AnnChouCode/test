@@ -146,14 +146,14 @@ const routes = [
     component: () => import('../views/admin/AdminLayout.vue'),
     meta: { navbarType: 'backend' },
     children: [
-      {
-        path: 'dashboard',
-        name: 'dashboard',
-        component: () => import('../views/admin/AdminDashBoard.vue'),
-        meta: {
-          title: '使用者後台 - Wanderer Land'
-        }
-      },
+      // {
+      //   path: 'dashboard',
+      //   name: 'dashboard',
+      //   component: () => import('../views/admin/AdminDashBoard.vue'),
+      //   meta: {
+      //     title: '使用者後台 - Wanderer Land'
+      //   }
+      // },
       {
         path: 'products',
         name: 'products',
