@@ -153,33 +153,6 @@ const routes = [
         meta: {
           title: '使用者後台 - Wanderer Land'
         }
-      },
-      {
-        path: 'products',
-        name: 'products',
-        component: () => import('../views/admin/AdminProductList.vue'),
-        meta: {
-          title: '商品管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'productinfo/new',
-        component: () => import('../views/admin/AdminProductInfo.vue'),
-        meta: {
-          title: '商品管理 - Wanderer Land'
-        }
-      },
-      {
-        path: 'productinfo/:id',
-        component: () => import('../views/admin/AdminProductInfo.vue'),
-        props: (route) => {
-          return {
-            id: route.params.id
-          }
-        },
-        meta: {
-          title: '商品管理 - Wanderer Land'
-        }
       }
     ]
   },
